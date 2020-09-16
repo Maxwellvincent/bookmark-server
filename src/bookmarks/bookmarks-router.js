@@ -13,6 +13,7 @@ bookmarksRouter
     .get((req, res) => {
         res.json(store.bookmarks)
     })
+
     .post(bodyParser, (req, res) => {
         for (const field of ['title', 'url', 'rating']) {
             if (!req.body[field]) {
@@ -59,6 +60,7 @@ bookmarksRouter
 
         res.json(bookmark)
     })
+    
     .delete((req, res) => {
         const { bookmark_id } = req.params
 
